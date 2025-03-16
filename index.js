@@ -23,7 +23,7 @@ app.post("/", async (req, res) => {
             }
             const response = await chat.sendAndAwaitResponse(req.body.message, true);
             if (response && response.text !== undefined) {
-                console.log(': "'+response.text+'"');
+                console.log('ai: "'+response.text+'"');
                 res.json({ response: response.text });
             }
         } catch (error) {}
